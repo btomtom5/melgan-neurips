@@ -71,8 +71,8 @@ def main():
     #####################
     # Create optimizers #
     #####################
-    optG = torch.optim.Adam(netG.parameters(), lr=1e-4, betas=(0.5, 0.9))
-    optD = torch.optim.Adam(netD.parameters(), lr=1e-4, betas=(0.5, 0.9))
+    optG = torch.optim.AdamW(netG.parameters(), lr=1e-4, betas=(0.5, 0.9))
+    optD = torch.optim.AdamW(netD.parameters(), lr=1e-4, betas=(0.5, 0.9))
 
     if load_root and load_root.exists():
         netG.load_state_dict(torch.load(load_root / "netG.pt"))
